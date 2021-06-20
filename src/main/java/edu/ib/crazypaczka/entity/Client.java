@@ -29,6 +29,15 @@ public class Client {
         this.password = password;
     }
 
+    public Client(String name, String surname, String address, String email, String number, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.address = address;
+        this.email = email;
+        this.number = number;
+        this.password = password;
+    }
+
     public Client() {
     }
 
