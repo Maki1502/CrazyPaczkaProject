@@ -1,4 +1,4 @@
-package edu.ib.crazypaczka;
+/*package edu.ib.crazypaczka;
 
 import edu.ib.crazypaczka.entity.Client;
 import edu.ib.crazypaczka.repo.ClientRepo;
@@ -18,8 +18,8 @@ public class TestData {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        Client client1 = new Client("Jan","Nowak","Wroclaw","mail@test.com","1","123");
+        Client client1 = new Client("Jan","Nowak","Wroclaw","mail@test.com","123123123","123");
         clientRepo.save(client1);
 
     }
-}
+}*/

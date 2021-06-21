@@ -26,7 +26,7 @@
                 <label class="col-4 col-form-label">Password: </label>
                 <div class="col-8">
                     <input type="password" th:field="*{password}" class="form-control"
-                           required minlength="6" maxlength="10"/>
+                           required minlength="4" maxlength="10"/>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="form-group row">
                 <label class="col-4 col-form-label">Phone number: </label>
                 <div class="col-8">
-                    <input type="text" th:field="*{number}" class="form-control"
+                    <input type="number" th:field="*{number}" class="form-control"
                            required minlength="2" maxlength="20" />
                 </div>
             </div>
