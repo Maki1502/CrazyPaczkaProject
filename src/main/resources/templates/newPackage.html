@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>New Package</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container text-center">
+    <div>
+      <h1>Send new package</h1>
+    </div>
+    <form th:action="@{/process_register}" th:object="${user}" method="post" style="max-width: 600px; margin: 0 auto;">
+      <div class="m-3">
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Sender</label>
+          <div class="col-8">
+            <input type="text" th:field="*{sendName}" class="form-control" required placeholder="Name"/> <br>
+            <input type="email" th:field="*{sendSurname}" class="form-control" required placeholder="Surname"/>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Address</label>
+          <div class="col-8">
+            <input type="text" th:field="*{sendAddress}" class="form-control" required placeholder="Address"/> <br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">Phone number</label>
+          <div class="col-8">
+            <input type="text" th:field="*{sendNumber}" class="form-control" required placeholder="123456789"/> <br>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-4 col-form-label">E-mail</label>
+          <div class="col-8">
+            <input type="text" th:field="*{sendMail}" class="form-control" required placeholder="Address"/> <br>
+          </div>
+        </div>
+        </div>
+
+<br><br>
+
+        <div class="m-3">
+          <div class="form-group row">
+            <label class="col-4 col-form-label">Recipient</label>
+            <div class="col-8">
+              <input type="text" th:field="*{recName}" class="form-control" required placeholder="Name"/> <br>
+              <input type="email" th:field="*{recSurname}" class="form-control" required placeholder="Surname"/>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-4 col-form-label">Address</label>
+            <div class="col-8">
+              <input type="text" th:field="*{recAddress}" class="form-control" required placeholder="Address"/> <br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label">Phone number</label>
+            <div class="col-8">
+              <input type="text" th:field="*{recNumber}" class="form-control" required placeholder="123456789"/> <br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-4 col-form-label">E-mail</label>
+            <div class="col-8">
+              <input type="text" th:field="*{recMail}" class="form-control" required placeholder="Address"/> <br>
+            </div>
+          </div>
+          </div>
+      </div>
+
+      <br>
+
+<div>
+  <label for="pSize">Choose package size: </label>
+  <select id="pSize" name="pSize">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+  </select>
+</div>
+<br>
+<div>
+  <button type="submit">Submit</button>
+    <br>
+      <button type="button">Cancel</button>
+</div>
+
+
+
+    </form>
+  </div>
+</body>
+
+</html>

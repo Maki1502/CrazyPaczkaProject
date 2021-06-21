@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>List Users</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container text-center">
+    <div>
+      <form th:action="@{/logout}" method="post">
+        <p>
+          Welcome <b>[[${#request.userPrincipal.principal.fullName}]] </b> (Admin)
+            </p>
+            <input type="submit" value="Sign Out" /><br><br>
+        </form>
+    </div>
+    <div>
+        <h1>List of Packages</h1>
+    </div>
+
+<div class="row form-group"></div>
+<div class="row form-group"></div>
+<div class="row form-group"></div>
+
+<div>
+  <label for="fId">Find package by ID:</label>
+  <input type="text" id="fId" name="fId"><br><br>
+
+<table class="table table-striped">
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+
+            <tr>
+                <th>PackgeID</th>
+                <th>Ship. date</th>
+                <th>Rec. date</th>
+                <th>SenderID</th>
+                <th>RecipientID</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Price</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- <tr th:each="user: ${listUsers}">
+                <td th:text="${user.id}">User ID</td>
+                <td th:text="${user.email}">E-mail</td>
+                <td th:text="${user.name}">First Name</td>
+                <td th:text="${user.surname}">Last Name</td>
+            </tr> -->
+
+            <th scope="row"></th>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<div>
+  <label for="fUser">Find user by ID:</label>
+  <input type="text" id="fUser" name="fUser"><br><br>
+
+<table class="table table-striped">
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+
+            <tr>
+                <th>UserID</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Address</th>
+                <th>E-mail</th>
+                <th>Phone number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- <tr th:each="user: ${listUsers}">
+                <td th:text="${user.id}">User ID</td>
+                <td th:text="${user.email}">E-mail</td>
+                <td th:text="${user.name}">First Name</td>
+                <td th:text="${user.surname}">Last Name</td>
+            </tr> -->
+
+            <th scope="row"></th>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
