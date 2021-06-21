@@ -1,4 +1,3 @@
-/*
 package edu.ib.crazypaczka;
 
 
@@ -61,4 +60,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 }
-*/
