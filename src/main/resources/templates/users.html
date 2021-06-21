@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="ISO-8859-1">
-    <title>List Users</title>
-    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
-    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+  <meta charset="ISO-8859-1">
+  <title>List Users</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<div class="container text-center">
+  <div class="container text-center">
     <div>
-        <form th:action="@{/logout}" method="post">
-            <p>
-                Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+      <form th:action="@{/logout}" method="post">
+        <p>
+          Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b> (User)
             </p>
-            <input type="submit" value="Sign Out" />
+            <input type="submit" value="Sign Out" /><br><br>
         </form>
+    </div>
+    <div>
+      <button type="button">Send new package</button>
     </div>
     <div>
         <h1>List of Packages</h1>
     </div>
 
-    <!--<div>
+<div class="row form-group"></div>
+<div class="row form-group"></div>
+<div class="row form-group"></div>
+
+<div>
+  <label for="fDate">Find by date:</label>
+  <input type="text" id="fDate" name="fDate"><br><br>
+
+  <label for="fStatus">Find by status:</label>
+<input type="text" id="fStatus" name="fStatus"><br><br>
+</div>
+
+<table class="table table-striped">
+
+    <div>
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
+
             <tr>
-                <th>User ID</th>
-                <th>E-mail</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Ship. date</th>
+                <th>Rec. date</th>
+                <th>Size</th>
+                <th>Automat</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="user: ${listUsers}">
+            <!-- <tr th:each="user: ${listUsers}">
                 <td th:text="${user.id}">User ID</td>
                 <td th:text="${user.email}">E-mail</td>
                 <td th:text="${user.name}">First Name</td>
                 <td th:text="${user.surname}">Last Name</td>
-            </tr>
+            </tr> -->
+
+            <th scope="row"></th>
             </tbody>
         </table>
-    </div>-->
+    </div>
 </div>
 </body>
 </html>
