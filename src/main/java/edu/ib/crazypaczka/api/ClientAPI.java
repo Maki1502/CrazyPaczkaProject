@@ -1,6 +1,5 @@
 package edu.ib.crazypaczka.api;
 
-import edu.ib.crazypaczka.entity.Automat;
 import edu.ib.crazypaczka.entity.Client;
 import edu.ib.crazypaczka.manager.ClientManager;
 import org.springframework.beans.factory.annotation.Autowired;

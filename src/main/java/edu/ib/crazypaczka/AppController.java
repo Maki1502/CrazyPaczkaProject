@@ -1,7 +1,9 @@
 package edu.ib.crazypaczka;
 
 import edu.ib.crazypaczka.entity.Client;
+import edu.ib.crazypaczka.entity.Shipment;
 import edu.ib.crazypaczka.repo.ClientRepo;
+import edu.ib.crazypaczka.repo.ShipmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ public class AppController {
 
     @Autowired
     private ClientRepo clientRepo;
+    private ShipmentRepo shipmentRepo;
 
     @GetMapping("")
     public String viewHomePage() {
@@ -44,5 +47,18 @@ public class AppController {
         List<Client> listUsers = (List<Client>) clientRepo.findAll();
         model.addAttribute("listUsers", listUsers);
         return "users";
+    }
+
+    @GetMapping("/package")
+    public String getNewPackage(Model model) {
+        model.addAttribute("package", new Shipment());
+        return "newPackage";
+    }
+
+    @PostMapping("/package_register")
+    public String package_register(Shipment shipment) {
+        shipmentRepo.save(shipment);
+
+        return "package_success";
     }
 }
