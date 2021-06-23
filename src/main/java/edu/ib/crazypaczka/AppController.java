@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
+@CrossOrigin
 @Controller
 public class AppController {
 
@@ -58,7 +60,6 @@ public class AppController {
     @PostMapping("/package_register")
     public String package_register(Shipment shipment) {
         shipmentRepo.save(shipment);
-
         return "package_success";
     }
 }
